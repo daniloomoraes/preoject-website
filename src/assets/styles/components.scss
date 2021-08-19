@@ -1,0 +1,63 @@
+.app-header {
+  align-items: center;
+  background: #dcdcdc;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem 0 2rem;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+    flex-direction: row;
+  }
+
+  &__logo {
+    background: #999;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 22px;
+  }
+}
+
+.app-menu {
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    color: #595959;
+    font-family: sans-serif;
+    margin-right: 1rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.app-container {
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+.app-footer {
+  background: #dcdcdc;
+  padding: .5rem 2rem;
+  text-align: right;
+  position: relative;
+  bottom: 0;
+  clear: both;
+
+  &__message {
+    color: #595959;
+    font-family: sans-serif;
+  }
+}

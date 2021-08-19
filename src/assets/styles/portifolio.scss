@@ -1,0 +1,28 @@
+.list-portifolio {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+
+  li.item {
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    margin: 0 0 2rem 0;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      margin: 0 1rem 2rem 1rem;
+      width: 30%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      padding: 0 1rem;
+    }
+  }
+}

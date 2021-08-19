@@ -1,0 +1,11 @@
+.img {
+  width: 100%;
+  float: none;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 45%;
+    float: left;
+    margin: 0 2rem 2rem 0px;
+  }
+}

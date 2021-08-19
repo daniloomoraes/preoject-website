@@ -1,0 +1,64 @@
+.slick-slider {
+  margin-bottom: -24px;
+
+  .slick-prev {
+    width: 41px;
+    height: 41px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='41' width='41'%3E%3Cpath d='M1.336.8h39v39h-39z' stroke='%23C7C7C7' fill='%23fff'%3E%3C/path%3E%3Cpath fill='%23C7C7C7' d='m23.13 26.3 1.41-1.41-4.58-4.59 4.58-4.59-1.41-1.41-6 6 6 6z'%3E%3C/path%3E%3C/svg%3E");
+    background-position: center;
+    position: absolute;
+    top: 48%;
+    left: 25px;
+    z-index: 1;
+
+    &:hover {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='41' width='41'%3E%3Cpath d='M1.336.8h39v39h-39z' stroke='%23C7C7C7' fill='%23fff'%3E%3C/path%3E%3Cpath fill='%23C7C7C7' d='m23.13 26.3 1.41-1.41-4.58-4.59 4.58-4.59-1.41-1.41-6 6 6 6z'%3E%3C/path%3E%3C/svg%3E");
+    }
+  }
+
+  .slick-next {
+    width: 41px;
+    height: 41px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='41' width='41'%3E%3Cpath d='M1.336.8h39v39h-39z' stroke='%23C7C7C7' fill='%23fff'%3E%3C/path%3E%3Cpath fill='%23C7C7C7' d='m18.54 14.3-1.41 1.41 4.58 4.59-4.58 4.59 1.41 1.41 6-6-6-6z'%3E%3C/path%3E%3C/svg%3E");
+    background-position: center;
+    position: absolute;
+    top: 48%;
+    right: 25px;
+    z-index: 1;
+
+    &:hover {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='41' width='41'%3E%3Cpath d='M1.336.8h39v39h-39z' stroke='%23C7C7C7' fill='%23fff'%3E%3C/path%3E%3Cpath fill='%23C7C7C7' d='m18.54 14.3-1.41 1.41 4.58 4.59-4.58 4.59 1.41 1.41 6-6-6-6z'%3E%3C/path%3E%3C/svg%3E");
+    }
+  }
+
+  .slick-dots {
+    position: relative;
+    bottom: 60px;
+
+    li {
+      z-index: 9;
+
+      button {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin: 0;
+        padding: 0;
+        background: #FFFFFF;
+        border-radius: 50%;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &.slick-active button {
+        background: #FFFFFF;
+        border: solid 3px #999;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
