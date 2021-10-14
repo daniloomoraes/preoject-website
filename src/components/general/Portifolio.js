@@ -1,42 +1,47 @@
-import React from "react";
+import React from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 import '../../assets/styles/components.scss'
 
 class PortifolioPage extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = { data: [] }
-	}
+  state = {
+    persons: []
+  }
 
-	loadData() {
-		fetch('https://projettiweb.com.br/TEMP/feed.json')
-			.then(response => response.json())
-			.then(data => {
-				this.setState({data: data })
-		})
-			.catch(err => console.error(this.props.url, err.toString()))
-	}
-
-	componentDidMount() {
-		this.loadData()
-	}
+  componentDidMount() {
+    axios.get(`https://projettiweb.com.br/TEMP/feed.php`)
+      .then(res => {
+        const persons = res.data;
+        this.setState({ persons });
+      })
+  }
 
   render() {
-    return <ul className="list-portifolio">
-
-      {
-      this.state.data.map((item, i) => {
-				return <li key={item.Id} className='item'>
+    return (
+      <ul className="list-portifolio">
+        { this.state.persons.map(item =>
+          <li key={item.Id} className='item'>
 						<div>
-							<a target="_blank" href={item.urlLink} rel="noreferrer">
-								<img src={item.urlImage} alt="" />
-          		</a>
+							<Link 
+              to={{
+                pathname: '/details/'+item.Id+'/'+item.NameLink,
+                Id: item.Id,
+                NameLink: item.NameLink,
+                Name: item.Name,
+                Description: item.Description,
+                urlImage: item.urlImage,
+                urlLink: item.urlLink,
+              }}
+              >
+								<img src={item.urlImage} alt={item.Name} />
+							</Link>
 						</div>
 						<p>{item.Name}</p>
 				</li>
-        })
-      }
-    </ul>;
+        )}
+      </ul>
+    )
   }
 }
 
