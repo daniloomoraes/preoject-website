@@ -22,9 +22,9 @@ const Menu = () => (
                 </Link>
             </li>
             <li className="app-menu__item">
-                <Link className="app-menu__link" to="/favorites">
+                <a className="app-menu__link" href="/favorites">
                     Favorites
-                </Link>
+                </a>
             </li>
             <li className="app-menu__item">
                 <Link className="app-menu__link" to="/contact">

@@ -4,20 +4,30 @@ import { Link } from 'react-router-dom'
 
 import '../../assets/styles/components.scss'
 
-const idFavorites = localStorage.getItem('favorites');
-const idFavorites1 = idFavorites.replace('[', '');
-const idFavorites2 = idFavorites1.replace(']', '');
-const idFavorites3 = idFavorites2.replace(/"/g, '');
-const URLfavorites = `https://projettiweb.com.br/TEMP/feed.php?id=${idFavorites3}`;
-const URLfavoritesOK = URLfavorites.replace(' ', '');
-
+var URLfavoritesOK = '';
+if(!localStorage.getItem('favorites')){
+  const URLfavorites = `https://projettiweb.com.br/TEMP/feed.php?id=0`;
+  URLfavoritesOK = URLfavorites.replace(' ', '');
+}else{
+  if(JSON.parse(localStorage.getItem('favorites')).length === 0){
+    const URLfavorites = `https://projettiweb.com.br/TEMP/feed.php?id=0`;
+    URLfavoritesOK = URLfavorites.replace(' ', '');  
+  }else{
+    const idFavorites = localStorage.getItem('favorites');
+    const idFavorites1 = idFavorites.replace('[', '');
+    const idFavorites2 = idFavorites1.replace(']', '');
+    const idFavorites3 = idFavorites2.replace(/"/g, '');
+    const URLfavorites = `https://projettiweb.com.br/TEMP/feed.php?id=${idFavorites3}`;
+    URLfavoritesOK = URLfavorites.replace(' ', '');
+  }
+}
 class FavoritePage extends React.Component {
   state = {
     persons: []
   }
 
   componentDidMount() {
-    axios.get(URLfavoritesOK)
+    axios.get(`${URLfavoritesOK}`)
       .then(res => {
         const persons = res.data;
         this.setState({ persons });
@@ -32,7 +42,7 @@ class FavoritePage extends React.Component {
 						<div>
 							<Link 
               to={{
-                pathname: '/Favorite/'+item.Id+'/'+item.NameLink,
+                pathname: '/favorite/'+item.Id+'/'+item.NameLink,
                 Id: item.Id,
                 NameLink: item.NameLink,
                 Name: item.Name,

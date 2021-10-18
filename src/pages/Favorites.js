@@ -3,7 +3,7 @@ import React from 'react'
 import Container from '../components/container'
 import Footer from '../components/footer'
 import Header from '../components/header'
-import FavoritePage from '../components/general/Favorite'
+import FavoritePage from '../components/general/Favorites'
 
 import '../assets/styles/favorites.scss';
 

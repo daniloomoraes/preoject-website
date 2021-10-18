@@ -8,6 +8,7 @@ import Home from '../pages/Home'
 import Portifolio from '../pages/Portifolio'
 import Details from '../pages/Details'
 import Favorites from '../pages/Favorites'
+import FavoriteDetails from '../pages/FavoriteDetails.js'
 
 const NoMatchRoute = () => <div>404 Page</div>;
 const Routes = () => (
@@ -19,6 +20,7 @@ const Routes = () => (
             <Route exact path="/portifolio" component={Portifolio} />
             <Route exact path="/favorites" component={Favorites} />
             <Route exact path="/details/:id/:name" component={Details} />
+            <Route exact path="/favorite/:id/:name" component={FavoriteDetails} />
             <Route component={NoMatchRoute} />
         </Switch>
     </Router>
